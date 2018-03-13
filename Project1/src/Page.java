@@ -1,12 +1,16 @@
-import org.openqa.selenium.WebElement;
+
 
 public abstract class Page {
-	
+
 	protected static String Email;
 	protected static String Password;
-	protected static WebElement MainButton;
-	public Page(String Email, String Password) {
-		// TODO Auto-generated constructor stub
+
+	public Page(String email, String password ) 
+	{
+		
+		Email = email;
+		Password = password;
+
 	}
 	/**
 	 * @return the email
@@ -32,19 +36,8 @@ public abstract class Page {
 	public void setPassword(String password) {
 		Password = password;
 	}
-	/**
-	 * @return the mainButton
-	 */
-	public WebElement getMainButton() {
-		return MainButton;
-	}
-	/**
-	 * @param mainButton the mainButton to set
-	 */
-	public void setMainButton(WebElement mainButton) {
-		MainButton = mainButton;
-	}
 
-	
-	
+
+
+
 }
