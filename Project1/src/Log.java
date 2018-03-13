@@ -15,10 +15,10 @@ public class Log extends Page{
 
 	}
 
-	public static boolean PassBox(String Email)
+	public static boolean PassBox(String Password)
 	{
 
-		if(Email.length()>=1) 
+		if(Password.length()>=1) 
 		{
 			return true;
 		}

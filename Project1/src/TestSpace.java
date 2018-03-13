@@ -366,6 +366,37 @@ public class TestSpace {
 		assertEquals(false, SU.Gui(Er1.getFname()));
 	}
 	@Test
+
+	public void ErrorH2() throws InterruptedException 
+	{
+
+		WebDriver Er2 = new FirefoxDriver();
+
+		SU Erl2 = new SU("arnona", "", "", "1");
+
+		Er2.get("file:///Users/charlie/Desktop/Automation%20/projectAutomation/signUp/index.html");
+
+		Er2.findElement(By.id("Sign-UpB")).click();
+
+		Er2.findElement(By.id("FNTB")).sendKeys(Erl2.getFname());
+
+		Er2.findElement(By.id("LNTB")).sendKeys(Erl2.getLname());
+
+		Er2.findElement(By.xpath("//*[@id=\"EmailTB\"]")).sendKeys(Erl2.getEmail());
+
+		Er2.findElement(By.id("PassTB")).sendKeys(Erl2.getPassword());
+
+		Thread.sleep(2000);
+
+		Er2.findElement(By.id("BGetS")).click();
+
+		assertEquals(false, SU.Gui(Erl2.getFname()));
+	}
+	
+	
+	
+	
+	@Test
 	public void ErrorHlog() throws InterruptedException 
 	{
 		WebDriver ErL = new FirefoxDriver();
@@ -392,6 +423,32 @@ public class TestSpace {
 
 	}
 
+	@Test
+	public void ErrorHlog2() throws InterruptedException 
+	{
+		WebDriver ErL2 = new FirefoxDriver();
+
+		Log Erl2 = new Log("a@@@  Q", "@#$%");
+
+		ErL2.get("file:///Users/charlie/Desktop/Automation%20/projectAutomation/signUp/index.html");
+
+		ErL2.findElement(By.id("LoginB")).click();
+
+		ErL2.findElement(By.id("ReEmailTB")).sendKeys(Erl2.getEmail());
+
+		ErL2.findElement(By.id("RePassTB")).sendKeys(Erl2.getPassword());
+
+		assertEquals(true, Log.ReMailBox(Erl2.getEmail()));
+
+		assertEquals(true, Log.PassBox(Erl2.getPassword()));
+
+		Thread.sleep(2000);
+
+		ErL2.findElement(By.id("ReBGetS")).click();
+
+		assertEquals(false, ErL2.getPageSource().contains("Index of file:///"));
+
+	}
 
 
 
